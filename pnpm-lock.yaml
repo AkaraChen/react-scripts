@@ -52,7 +52,7 @@ importers:
       '@miaojs/plugin-util': link:../plugin-util
       typescript: 4.9.4
 
-  packages/create-react-app:
+  packages/create-miao-app:
     specifiers: {}
 
   packages/plugin-util:
@@ -71,6 +71,12 @@ importers:
       '@miaojs/css': link:../../plugins/css
       '@miaojs/html': link:../../plugins/html
       prettier-config-akrc: 0.0.0
+
+  plugins/console:
+    specifiers:
+      '@miaojs/plugin-util': workspace:*
+    devDependencies:
+      '@miaojs/plugin-util': link:../../packages/plugin-util
 
   plugins/css:
     specifiers:

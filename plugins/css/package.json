@@ -1,0 +1,20 @@
+{
+  "name": "@miaojs/css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^7.0.2"
+  },
+  "devDependencies": {
+    "@miaojs/core": "workspace:*"
+  }
+}

@@ -1,3 +1,8 @@
 {
-    "extends": ["akrc"]
+    "extends": ["akrc"],
+    "rules": {
+        "no-unused-vars": "off",
+        "unicorn/prefer-module": "off",
+        "global-require": "off"
+    }
 }

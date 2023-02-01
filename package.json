@@ -1,0 +1,25 @@
+{
+  "name": "package-starter-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "build": "rollup -c rollup.config.mjs",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "eslint": "^8.30.0",
+    "eslint-config-akrc": "^1.0.0",
+    "rollup": "^3.9.0",
+    "rollup-plugin-summary": "^2.0.0",
+    "rollup-plugin-ts": "^3.0.2",
+    "typescript": "^4.9.4",
+    "vitest": "^0.28.0"
+  }
+}

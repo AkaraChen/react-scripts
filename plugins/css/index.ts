@@ -7,6 +7,7 @@ import type Webpack from 'webpack';
 import fs from 'node:fs';
 
 const CssPlugin = definePlugins({
+    name: 'css',
     webpack(config, { env, cwd }) {
         const getLoaders = () => {
             const postCssConfigDir = path.resolve(cwd, './postcss.config.js');

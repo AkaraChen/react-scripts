@@ -1,24 +1,26 @@
-import config from './base';
+import { getWebpackConfig } from './base';
 import path from 'node:path';
-import { IPlugin, Env } from '@miaojs/plugin-util';
+import { IPlugin, Props } from '@miaojs/plugin-util';
 
-export const applyPlugin = (plugins: string[], cwd: string) => {
-    const resolvePlugin = (pluginName: string) => {
-        const pluginPackage = `@miaojs/${pluginName}`;
-        const pluginDir = require.resolve(
-            path.resolve(cwd, './node_modules', pluginPackage)
-        );
-        const plugin: IPlugin = require(pluginDir).default;
-        if (!plugin) throw new Error(`Plugin ${pluginName} not found.`);
-        return plugin;
-    };
-    let result = config;
+const resolveModule = (name: string, cwd: string) => {
+    const pkgDir = path.resolve(cwd, './node_modules', name);
+    return require.resolve(pkgDir);
+};
+
+const resolvePlugin = (pluginName: string, cwd: string) => {
+    const pluginPackage = `@miaojs/${pluginName}`;
+    const pluginDir = resolveModule(pluginPackage, cwd);
+    const plugin: IPlugin = require(pluginDir).default;
+    if (!plugin) throw new Error(`Plugin ${pluginName} not found.`);
+    return plugin;
+};
+
+export const applyPlugin = (plugins: string[], props: Props) => {
+    const { cwd } = props;
+    let webpackConfig = getWebpackConfig(props);
     for (const pluginName of plugins) {
-        const plugin = resolvePlugin(pluginName);
-        result = plugin.webpack(result, {
-            env: Env.dev,
-            cwd
-        });
+        const plugin = resolvePlugin(pluginName, cwd);
+        webpackConfig = plugin.webpack(webpackConfig, props);
     }
-    return result;
+    return webpackConfig;
 };

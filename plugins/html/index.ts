@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import fs from 'node:fs';
 
 const HTMLPlugin = definePlugins({
+    name: 'html',
     webpack(config, { cwd }) {
         const templatePath = path.resolve(cwd, 'index.html');
         const template = fs.existsSync(templatePath)

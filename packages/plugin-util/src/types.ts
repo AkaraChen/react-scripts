@@ -18,4 +18,5 @@ export interface IPlugin {
     ) => Webpack.Configuration;
     order?: number;
     beforeStart?: (props: Props) => void;
+    onStart?: (props: Props) => void;
 }

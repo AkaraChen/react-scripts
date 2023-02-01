@@ -2,6 +2,7 @@ import Webpack from 'webpack';
 import 'webpack-dev-server';
 import path from 'node:path';
 import { Props } from '@miaojs/plugin-util';
+import { IConfig } from '../config';
 
 export const getWebpackConfig = ({ cwd }: Props) => {
     return {
@@ -25,4 +26,12 @@ export const getWebpackConfig = ({ cwd }: Props) => {
         },
         stats: 'errors-warnings'
     } as Webpack.Configuration;
+};
+
+export const getConfig = (props: Props): IConfig => {
+    return {
+        webpackConfig: getWebpackConfig(props),
+        beforeStart: [],
+        onStart: []
+    };
 };

@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@miaojs/core": "workspace:*"
+    "@miaojs/plugin-util": "workspace:*"
   },
   "dependencies": {
     "html-webpack-plugin": "^5.5.0"

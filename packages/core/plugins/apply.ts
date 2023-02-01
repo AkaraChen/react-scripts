@@ -1,6 +1,6 @@
 import config from './base';
-import { Env, IPlugin } from './types';
 import path from 'node:path';
+import { IPlugin, Env } from '@miaojs/plugin-util';
 
 export const applyPlugin = (plugins: string[], cwd: string) => {
     const resolvePlugin = (pluginName: string) => {

@@ -1,14 +1,14 @@
-import { IPlugin } from '@miaojs/core';
+import { definePlugins } from '@miaojs/plugin-util';
 import path from 'node:path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import fs from 'node:fs';
 
-const HTMLPlugin: IPlugin = {
+const HTMLPlugin = definePlugins({
     webpack(config, { cwd }) {
         const templatePath = path.resolve(cwd, 'index.html');
         const template = fs.existsSync(templatePath)
             ? fs.readFileSync(templatePath, 'utf8')
-            : /* html */`
+            : /* html */ `
               <!DOCTYPE html>
               <html lang="en">
               <head>
@@ -22,11 +22,13 @@ const HTMLPlugin: IPlugin = {
               </body>
               </html>
             `;
-        config.plugins?.push(new HtmlWebpackPlugin({
-            templateContent: template
-        }));
+        config.plugins!.push(
+            new HtmlWebpackPlugin({
+                templateContent: template
+            })
+        );
         return config;
     }
-};
+});
 
 export default HTMLPlugin;

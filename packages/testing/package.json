@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "miao dev"
+    "dev": "miao dev",
+    "build": "miao build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@miaojs/cli": "workspace:*",
     "@miaojs/core": "workspace:*",
     "@miaojs/css": "workspace:*",
-    "@miaojs/cli": "workspace:*",
-    "@miaojs/html": "workspace:*"
+    "@miaojs/html": "workspace:*",
+    "prettier-config-akrc": "^0.0.0"
   }
 }

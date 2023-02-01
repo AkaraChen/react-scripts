@@ -1,6 +1,5 @@
 import Webpack from 'webpack';
-// eslint-disable-next-line no-unused-vars
-import type WebpackDevServer from 'webpack-dev-server';
+import 'webpack-dev-server';
 import path from 'node:path';
 
 const cwd = process.cwd();

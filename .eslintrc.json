@@ -1,5 +1,5 @@
 {
-    "extends": ["akrc"],
+    "extends": ["akrc", "plugin:prettier/recommended"],
     "rules": {
         "no-unused-vars": "off",
         "unicorn/prefer-module": "off",

@@ -16,6 +16,9 @@
     "@types/webpack": "^5.28.0",
     "eslint": "^8.33.0",
     "eslint-config-akrc": "^1.2.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.3",
     "turbo": "^1.7.1",
     "typescript": "^4.9.5",
     "vitest": "^0.28.3"

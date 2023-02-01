@@ -1,4 +1,4 @@
-import { Env, IPlugin } from '@miaojs/core';
+import { Env, definePlugins } from '@miaojs/plugin-util';
 // @ts-ignore
 import MiniCSSExtract from 'mini-css-extract-plugin';
 import path from 'node:path';
@@ -6,7 +6,7 @@ import path from 'node:path';
 import type Webpack from 'webpack';
 import fs from 'node:fs';
 
-const CssPlugin: IPlugin = {
+const CssPlugin = definePlugins({
     webpack(config, { env, cwd }) {
         const getLoaders = () => {
             const postCssConfigDir = path.resolve(cwd, './postcss.config.js');
@@ -30,21 +30,17 @@ const CssPlugin: IPlugin = {
 
         const getPlugins = (): Array<Webpack.WebpackPluginInstance> => {
             if (env === Env.dev) {
-                return [
-                    new MiniCSSExtract()
-                ];
+                return [new MiniCSSExtract()];
             }
             return [];
         };
-        config.module!.rules!.push(
-            {
-                test: /\.css$/,
-                use: getLoaders()
-            }
-        );
+        config.module!.rules!.push({
+            test: /\.css$/,
+            use: getLoaders()
+        });
         config.plugins!.push(...getPlugins());
         return config;
     }
-};
+});
 
 export default CssPlugin;

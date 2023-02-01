@@ -15,6 +15,6 @@
     "postcss-loader": "^7.0.2"
   },
   "devDependencies": {
-    "@miaojs/core": "workspace:*"
+    "@miaojs/plugin-util": "workspace:*"
   }
 }

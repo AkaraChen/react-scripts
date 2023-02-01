@@ -9,9 +9,9 @@ export interface IPlugin {
     webpack: (
         config: Webpack.Configuration,
         props: {
-            env: Env,
-            cwd: string
+            env: Env;
+            cwd: string;
         }
-    ) => Webpack.Configuration,
-    order?: number,
+    ) => Webpack.Configuration;
+    order?: number;
 }

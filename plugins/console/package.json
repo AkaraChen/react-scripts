@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "@miaojs/plugin-util": "workspace:*"
+  },
+  "dependencies": {
+    "consola": "^2.15.3"
   }
 }

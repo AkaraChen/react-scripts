@@ -21,10 +21,6 @@ export const getWebpackConfig = ({ cwd }: Props) => {
             rules: []
         },
         plugins: [],
-        infrastructureLogging: {
-            level: 'error'
-        },
-        stats: 'errors-warnings'
     } as Webpack.Configuration;
 };
 

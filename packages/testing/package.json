@@ -15,6 +15,7 @@
     "@miaojs/core": "workspace:*",
     "@miaojs/css": "workspace:*",
     "@miaojs/html": "workspace:*",
+    "@miaojs/console": "workspace:*",
     "prettier-config-akrc": "^0.0.0"
   }
 }

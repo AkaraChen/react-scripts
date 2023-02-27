@@ -1,4 +1,4 @@
-import { applyPlugin, Env, getConfig, IConfig } from '@miaojs/core';
+import { applyPlugin, Env, IConfig } from '@miaojs/core';
 import Webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 
@@ -7,17 +7,15 @@ const currentEnv = process.env.NODE_ENV as Env;
 
 const cwd = process.cwd();
 
-const config: IConfig = applyPlugin(['css', 'html'], {
+const config: IConfig = applyPlugin(['css', 'html', 'console'], {
     cwd,
     env: currentEnv
 });
 const compiler = Webpack(config.webpackConfig);
 
 export const dev = () => {
-    const server = new WebpackDevServer({}, compiler);
-    server.startCallback(() => {
-        console.log('Start dev server');
-    });
+    const server = new WebpackDevServer({port: 3000}, compiler);
+    server.startCallback(() => {});
 };
 
 export const build = () => {

@@ -1,5 +1,6 @@
 {
   "name": "@miaojs/react",
+  "private": false,
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +9,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
 }

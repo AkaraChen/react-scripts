@@ -1,5 +1,6 @@
 {
   "name": "@miaojs/core",
+  "private": false,
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
@@ -22,5 +23,8 @@
   "exports": {
     ".": "./dist/index.js"
   },
-  "typings": "./dist/index.d.ts"
+  "typings": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
 }

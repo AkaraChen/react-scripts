@@ -1,5 +1,6 @@
 {
   "name": "@miaojs/cli",
+  "private": false,
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +16,8 @@
   "dependencies": {
     "@miaojs/core": "workspace:*",
     "webpack-dev-server": "^4.11.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

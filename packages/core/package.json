@@ -17,7 +17,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "devDependencies": {
-    "typescript": "^4.9.4",
+    "typescript": "^5.0.0",
     "@miaojs/plugin-util": "workspace:*"
   },
   "exports": {

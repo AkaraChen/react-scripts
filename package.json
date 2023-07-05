@@ -18,7 +18,7 @@
     "eslint-config-akrc": "^1.2.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.4",
+    "prettier": "^3.0.0",
     "turbo": "^1.8.2",
     "typescript": "^5.0.0",
     "vitest": "^0.29.1"
